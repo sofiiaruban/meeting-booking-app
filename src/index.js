@@ -12,7 +12,8 @@ function getItem(arr){
         let eventName = document.createElement('span');
         eventName.innerHTML = `${arr[i]["eventName"]}` 
         cell.appendChild(eventName);
-        cell.classList.add(`${arr[i]["participantName"]}`, "occupied");
+        cell.setAttribute("data-participant", `${arr[i]["participantName"]}`)
+        cell.classList.add("occupied");
     }
 }
 getItem(items);
