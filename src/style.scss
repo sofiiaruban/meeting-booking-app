@@ -4,7 +4,10 @@ $font-color: #303030;
 $filler-color: #ccffcc;
 $grid-border: 1px solid #c5c5c5;
 $filler-table-head-color: #e5e5e5;
-
+* {
+  box-sizing: border-box;
+  font-size: calc(21px + (30 - 22) * ((100vw - 320px) / (1200-320)));
+}
 .wrapper {
   margin: 55px 35px;
   position: relative;
@@ -45,15 +48,53 @@ header {
 table {
   border-collapse: collapse;
   text-align: center;
+  table-layout: fixed;
+  word-wrap: break-word;
   width: 100%;
   td,
   th {
     border: $grid-border;
+    font-size: 18px;
     padding: 8px;
   }
   th {
     background-color: $filler-table-head-color;
   }
+  td {
+    .close {
+      position: relative;
+      left: 30%;
+      bottom: 16px;
+      min-width: 3px;
+      min-height: 3px;
+      opacity: 0.3;
+    }
+    .close:hover {
+      opacity: 1;
+    }
+    .close:before,
+    .close:after {
+      position: none;
+      left: 15px;
+      content: " ";
+      height: 33px;
+      width: 2px;
+      background-color: #333;
+    }
+    .close:before {
+      transform: rotate(45deg);
+    }
+    .close:after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+.occupied {
+  .close:before,
+  .close:after {
+    position: absolute;
+  }
+  background-color: $filler-color;
 }
 .wrapper-create-event {
   display: flex;
@@ -61,7 +102,6 @@ table {
   margin: 55px 35px;
   height: 100vh;
   //font-size: 22px;
-  font-size: calc(22px + (30 - 22) * ((100vw - 320px) / (1200-320)));
 
   .create-event {
     margin: 0 auto;
@@ -83,7 +123,6 @@ table {
     border-radius: 5px;
   }
   .inp-event-name input {
-    box-sizing: border-box;
     border-width: 1px;
     padding: 0;
   }
@@ -99,8 +138,8 @@ table {
   }
 }
 .event-deliting-popup {
-  z-index: 2;
-  display: flex;
+  z-index: 100;
+  display: none;
   flex-direction: column;
   justify-content: center;
   width: 415px;
@@ -108,12 +147,11 @@ table {
   border: solid 2px #464646;
   background-color: #e6e6e6;
   border-radius: 5px;
-  font-size: 22px;
-  box-sizing: border-box;
   text-align: center;
   position: absolute;
-  top: 30%;
-  left: 30%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
   p {
     margin-bottom: 40px;
   }
@@ -130,14 +168,13 @@ table {
 }
 
 .error-message-popup {
+  display: none;
+  position: absolute;
   background-color: #ece0de;
   color: #aa4035;
-  display: flex;
   justify-content: space-between;
   width: 100%;
   max-height: 55px;
-  display: none;
-  position: absolute;
   top: 0;
   .material-icons {
     font-family: "Material Icons";

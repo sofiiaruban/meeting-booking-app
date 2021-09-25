@@ -4,11 +4,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+       main: './src/index.js',
+       createEvent : './src/create-event.js',
+    },
+        
+    
     mode: 'development',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
+        filename: '[name].js',
     },
     module: {
         rules: [
@@ -25,10 +30,13 @@ module.exports = {
         ],
     },
     plugins: [
-        new HtmlWebpackPlugin({ template: './src/index.html' }),
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            chunks : ['main'], }),
         new HtmlWebpackPlugin({
             filename: 'create-event.html',
-            template: './src/create-event.html'
+            template: './src/create-event.html',
+            chunks : ['createEvent', 'style.css'],
         }),
         new MiniCssExtractPlugin({
             filename: 'styles.css'

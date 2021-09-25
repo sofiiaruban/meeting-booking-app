@@ -6,59 +6,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<script defer src="bundle.js"></script><link href="styles.css" rel="stylesheet"></head>
+<script defer src="createEvent.js"></script><link href="styles.css" rel="stylesheet"></head>
 
 <body>
     <div class="wrapper-create-event">
         <form action="" class="create-event">
             <div class="inp-event-name">
                 <label for="event-name">Name of the event:</label>
-                <input type="text" name="event-name" id="">
+                <input type="text"  name="event-name" id="event-name" maxlength="20">
             </div>
             <div class="sel-participant-name">
                 <label for="participant-name">Participants:</label>
-                <select name="participant-name" id="">
-                    <option value="">All members</option>
-                    <option value="">Maria</option>
-                    <option value="">Bob</option>
-                    <option value="">Alex</option>
+                <select name="participant-name" id="participant-name">
+                    <option value="all">All members</option>
+                    <option value="maria">Maria</option>
+                    <option value="bob">Bob</option>
+                    <option value="alex">Alex</option>
                 </select>
             </div>
             <div class="sel-day">
                 <label for="day">Day:</label>
-                <select name="day" id="">
-                    <option value="">Monday</option>
-                    <option value="">Tuesday </option>
-                    <option value="">Wednesday</option>
-                    <option value="">Thursday</option>
-                    <option value="">Friday</option>
+                <select name="day" id="day">
+                    <option value="mon">Monday</option>
+                    <option value="tue">Tuesday </option>
+                    <option value="wed">Wednesday</option>
+                    <option value="thu">Thursday</option>
+                    <option value="fri">Friday</option>
                 </select>
             </div>
             <div class="sel-time">
                 <label for="time">Time</label>
-                <select name="time" id="">
-                    <option value="">10:00</option>
-                    <option value="">11:00</option>
-                    <option value="">12:00</option>
-                    <option value="">13:00</option>
-                    <option value="">14:00</option>
-                    <option value="">15:00</option>
-                    <option value="">16:00</option>
-                    <option value="">17:00</option>
-                    <option value="">18:00</option>
+                <select name="time" id="time">
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="18:00">18:00</option>
                 </select>
             </div>
             <div class="btns">
                 <button class="btn-cancel" type="button">Cancel</button>
                 <input class="btn-submit" type="submit" value="Submit">
             </div>
-
+                
         </form>
     </div>
     <div class="error-message-popup">
         <span class="material-icons">cancel</span>
         <p>Failed to create an event. Time slot is already booked</p>
-        <span class="material-icons">close</span>
+        <span class="material-icons close">close</span>
     </div>
 </body>
 

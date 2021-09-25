@@ -26,17 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.js */ \"./src/index.js\");\n\r\n\r\nlet submitBtn = document.querySelector(\".btn-submit\");\r\nlet setData = function() {\r\n    let eventName = document.querySelector('#event-name').value;\r\n    let participantName = document.querySelector('#participant-name').value;\r\n    let day = document.querySelector('#day').value;\r\n    let time = document.querySelector('#time').value;\r\n\r\n\r\n    let newEvent =\r\n    {eventName,\r\n    participantName,\r\n    day,\r\n    time }\r\n   \r\n    \r\n    const events = JSON.parse(localStorage.getItem('events')) || [];\r\n    events.push(newEvent);\r\n    localStorage.setItem('events', JSON.stringify(events));\r\n    \r\n   \r\n}\r\nsubmitBtn.onclick = setData; \r\n\r\n//connect local storages of the two pages\r\nwindow.addEventListener('storage', function(e) {\r\n   \r\n});\n\n//# sourceURL=webpack://test-task/./src/create-event.js?");
-
-/***/ }),
-
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ \"./src/style.scss\");\n/* harmony import */ var _create_event_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./create-event.js */ \"./src/create-event.js\");\n//import \"./style.css\";\r\n\r\n\r\nlet table = document.querySelector('table');\r\ntable.onclick = function(event){\r\n    let target = event.target;\r\n    console.log(target)\r\n    if (target.tagName == 'TD') {\r\n        return target.style.background = \"#ccffcc\";\r\n    }\r\n}\r\nlet fillBar = function (){\r\n    let test = document.querySelector('#mon');\r\n    test.style.backgroundColor = '#ccffcc';\r\n}\r\nfillBar()\r\nlet test = document.querySelector('tr[data-time=\"10:00\"] td[data-day=\"mon\"]')\r\ntest.style.backgroundColor = '#ccffcc';\r\ntest.append('TEST');\r\n \r\n\r\n\n\n//# sourceURL=webpack://test-task/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ \"./src/style.scss\");\n\r\n\r\nlet submitBtn = document.querySelector(\".btn-submit\");\r\nlet setData = function(event) {\r\n    let eventName = document.querySelector('#event-name').value;\r\n    let participantName = document.querySelector('#participant-name').value;\r\n    let day = document.querySelector('#day').value;\r\n    let time = document.querySelector('#time').value;\r\n    event.preventDefault();\r\n\r\n    let newEvent =\r\n    {eventName,\r\n    participantName,\r\n    day,\r\n    time }\r\n    \r\n    const events = JSON.parse(localStorage.getItem('events')) || [];\r\n\r\n    //events.every(function(item) {\r\n    //    if (newEvent.day === item.day && newEvent.time === item.time){\r\n    //        showError();\r\n    //    } else {\r\n    //        events.push(newEvent);\r\n    //    }\r\n    //});\r\n\r\n    if  (events.some(item =>  (JSON.stringify(item.day) == JSON.stringify(newEvent.day) && JSON.stringify(item.time) == JSON.stringify(newEvent.time)))) {\r\n        showError();\r\n        } else {\r\n        events.push(newEvent);\r\n    }\r\n    localStorage.setItem('events', JSON.stringify(events));\r\n    submitBtn.addEventListener('click', redirect);\r\n}\r\n\r\nlet redirect = function() {\r\n    location.replace(\"index.html\");\r\n\r\n}\r\nsubmitBtn.addEventListener('click', setData);\r\n\r\n\r\nlet erorrModal = document.querySelector('.error-message-popup');\r\n\r\nfunction showError() {\r\n   return erorrModal.style.display= \"flex\";\r\n}\r\n\r\nlet closeErrorModal = document.querySelector('.close');\r\n\r\nfunction closeShowError() {\r\n    return erorrModal.style.display= \"none\";\r\n}\r\ncloseErrorModal.onclick = closeShowError;\r\n\r\n//connect local storages of the two pages\r\nwindow.addEventListener('storage', function(e) {\r\n   \r\n});\n\n//# sourceURL=webpack://test-task/./src/create-event.js?");
 
 /***/ })
 
@@ -80,7 +70,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 /************************************************************************/
 /******/ 	// startup
 /******/ 	// Load entry module
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	__webpack_require__("./src/index.js");
+/******/ 	__webpack_require__("./src/create-event.js");
+/******/ 	// This entry module used 'exports' so it can't be inlined
 /******/ })()
 ;
