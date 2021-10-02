@@ -96,6 +96,9 @@ table {
   }
   background-color: $filler-color;
 }
+.hide {
+  opacity: 0;
+}
 .wrapper-create-event {
   display: flex;
   flex-direction: column;

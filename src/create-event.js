@@ -31,10 +31,10 @@ let setData = function(event) {
         events.push(newEvent);
     }
     localStorage.setItem('events', JSON.stringify(events));
-    submitBtn.addEventListener('click', redirect);
+   
 }
-
-let redirect = function() {
+submitBtn.addEventListener('click', redirect);
+function redirect() {
     location.replace("index.html");
 
 }

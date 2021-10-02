@@ -50,7 +50,17 @@ function rerenderTable(day, time) {
     cell.classList.remove(cell.classList[0],"occupied");
 
 }
+let input =  document.getElementById('participant');
 
+input.addEventListener('change', filterMeeting);
+
+function filterMeeting () {
+    let inputedParticipant = input.value;
+    let cell = document.querySelector(`td[data-participant="${inputedParticipant}"]`);
+    cell.classList.add("hide");
+    
+
+}
 // to do 
 
 // * add filter function
