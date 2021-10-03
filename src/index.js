@@ -5,7 +5,6 @@ import "./style.scss";
 
 let items = JSON.parse(localStorage.getItem('events'));
 
-//console.log(items);
 function getItem(arr){
     for (let i = 0; i < arr.length; i++) {
         let cell = document.querySelector(`tr[data-time="${arr[i]["time"]}"] td[data-day="${arr[i]["day"]}"]`);
@@ -56,14 +55,18 @@ input.addEventListener('change', filterMeeting);
 
 function filterMeeting () {
     let inputedParticipant = input.value;
-    let cell = document.querySelector(`td[data-participant="${inputedParticipant}"]`);
-    cell.classList.add("hide");
+    let cells = document.querySelectorAll('td[data-participant]');
     
-
+    for (let i = 0; i < cells.length; i++) {
+        cells[i].classList.remove('hide');
+        if (cells[i].dataset.participant !== inputedParticipant && inputedParticipant !== "all") {
+          cells[i].classList.add('hide');
+        }  
+    }
+    
 }
 // to do 
-
-// * add filter function
+// event-deliting-popup
 // * fix close sign (markup);
 // * fix redirect box
 
