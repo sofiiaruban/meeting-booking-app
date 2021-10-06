@@ -406,23 +406,28 @@ table th {
 table th {
   background-color: #e5e5e5;
 }
-table td .close {
+table td {
   position: relative;
-  left: 30%;
-  bottom: 16px;
-  min-width: 3px;
-  min-height: 3px;
-  opacity: 0.3;
+}
+table td:hover .close {
+  display: block;
+}
+table td .close {
+  display: none;
+  position: absolute;
+  right: 6px;
+  top: 0;
+  min-width: 1px;
+  min-height: 1px;
 }
 table td .close:hover {
-  opacity: 1;
+  cursor: pointer;
 }
 table td .close:before,
 table td .close:after {
-  position: none;
-  left: 15px;
+  position: absolute;
   content: " ";
-  height: 33px;
+  height: 15px;
   width: 2px;
   background-color: #333;
 }

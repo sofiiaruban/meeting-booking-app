@@ -18,17 +18,32 @@ function getItem(arr){
 getItem(items);
 
 let table = document.querySelector('table');
+let deletePopUp = document.querySelector('.event-deliting-popup');
+let confirmBtn = document.querySelector('.event-deliting-confirm-btn');
+let undoBtn = document.querySelector('.event-deliting-undo-btn');
+
 table.onclick = function(event){
     let target = event.target;
     
-    if (target.className =="close") {
+    if (target.className == "close") {
+
+        deletePopUp.style.display= "flex";
         let getParent = target.parentNode;
         let getDay = getParent.dataset.day;
         let getTime = getParent.parentNode.dataset.time;
-        deleteItem(getDay, getTime);
-        rerenderTable(getDay, getTime);
+        confirmBtn.onclick = function() {
+            deleteItem(getDay, getTime);
+            rerenderTable(getDay, getTime);
+            deletePopUp.style.display= "none";
+        } 
+        undoBtn.onclick= function() {
+            location.replace("index.html");
+        }
     }
+
 }
+
+
 function deleteItem(day, time) {
     let index;
     for (let i = 0; i < items.length; i++) {
@@ -46,7 +61,8 @@ function rerenderTable(day, time) {
     let cell = document.querySelector(`tr[data-time="${time}"] td[data-day="${day}"]`);
     let eventName = cell.lastChild;
     cell.removeChild(eventName);
-    cell.classList.remove(cell.classList[0],"occupied");
+    cell.removeAttribute("data-participant");
+    cell.classList.remove("occupied");
 
 }
 let input =  document.getElementById('participant');

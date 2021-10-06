@@ -61,23 +61,30 @@ table {
     background-color: $filler-table-head-color;
   }
   td {
+    position: relative;
+    &:hover {
+      .close {
+        display: block;
+      }
+    }
     .close {
-      position: relative;
-      left: 30%;
-      bottom: 16px;
-      min-width: 3px;
-      min-height: 3px;
-      opacity: 0.3;
+      display: none;
+      position: absolute;
+      right: 6px;
+      top: 0;
+      min-width: 1px;
+      min-height: 1px;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
-    .close:hover {
-      opacity: 1;
-    }
+
     .close:before,
     .close:after {
-      position: none;
-      left: 15px;
+      position: absolute;
       content: " ";
-      height: 33px;
+      height: 15px;
       width: 2px;
       background-color: #333;
     }
@@ -89,6 +96,7 @@ table {
     }
   }
 }
+
 .occupied {
   .close:before,
   .close:after {
