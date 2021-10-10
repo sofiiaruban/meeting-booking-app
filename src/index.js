@@ -28,16 +28,23 @@ table.onclick = function(event){
     if (target.className == "close") {
 
         deletePopUp.style.display= "flex";
+
         let getParent = target.parentNode;
+
+        let eventNameSpan = document.querySelector('.event-deliting-popup p span');
+        let eventName = getParent.lastChild.textContent;
+        eventNameSpan.textContent= `${eventName}`;
+
         let getDay = getParent.dataset.day;
         let getTime = getParent.parentNode.dataset.time;
+        
         confirmBtn.onclick = function() {
             deleteItem(getDay, getTime);
             rerenderTable(getDay, getTime);
             deletePopUp.style.display= "none";
         } 
         undoBtn.onclick= function() {
-            location.replace("index.html");
+             location.replace("index.html");
         }
     }
 
@@ -83,6 +90,5 @@ function filterMeeting () {
 }
 // to do 
 // event-deliting-popup
-// * fix close sign (markup);
 // * fix redirect box
 

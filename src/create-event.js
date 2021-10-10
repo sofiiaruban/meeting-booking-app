@@ -17,14 +17,6 @@ let setData = function(event) {
     
     const events = JSON.parse(localStorage.getItem('events')) || [];
 
-    //events.every(function(item) {
-    //    if (newEvent.day === item.day && newEvent.time === item.time){
-    //        showError();
-    //    } else {
-    //        events.push(newEvent);
-    //    }
-    //});
-
     if  (events.some(item =>  (JSON.stringify(item.day) == JSON.stringify(newEvent.day) && JSON.stringify(item.time) == JSON.stringify(newEvent.time)))) {
         showError();
         } else {
