@@ -350,7 +350,7 @@ template {
 
 * {
   box-sizing: border-box;
-  font-size: calc(21px + (30 - 22) * ((100vw - 320px) / (1200-320)));
+  font-size: calc(15px + (30 - 22) * ((100vw - 320px) / (1200-320)));
 }
 
 .wrapper {
@@ -387,7 +387,7 @@ header form .add-new-event-btn:active {
   background-color: #ebebeb;
   border: 1px solid #464646;
   box-sizing: border-box;
-  padding-top: 10px;
+  padding: 5px;
 }
 
 table {
@@ -400,7 +400,6 @@ table {
 table td,
 table th {
   border: 1px solid #c5c5c5;
-  font-size: 18px;
   padding: 8px;
 }
 table th {

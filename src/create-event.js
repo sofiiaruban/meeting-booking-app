@@ -20,7 +20,11 @@ let setData = function(event) {
     if  (events.some(item =>  (JSON.stringify(item.day) == JSON.stringify(newEvent.day) && JSON.stringify(item.time) == JSON.stringify(newEvent.time)))) {
         showError();
         } else {
-        events.push(newEvent);
+            if (newEvent.eventName !== "") {
+                events.push(newEvent);
+            } else {
+                showError(); 
+            }
     }
     localStorage.setItem('events', JSON.stringify(events));
    
