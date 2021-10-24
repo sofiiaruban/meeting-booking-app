@@ -13,3 +13,5 @@ Simple meeting planning app for a meeting room in office
 </p>
 
 ## Wireframes
+
+<img src= "src/wireframes/basic_calendar.png" alt= "">
