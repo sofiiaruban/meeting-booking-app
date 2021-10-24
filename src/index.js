@@ -31,9 +31,9 @@ table.onclick = function(event){
 
         let getParent = target.parentNode;
 
-        let eventNameSpan = document.querySelector('.event-deliting-popup p span');
+        let eventNameP = document.querySelector('.event-deliting-popup p');
         let eventName = getParent.lastChild.textContent;
-        eventNameSpan.textContent= `${eventName}`;
+        eventNameP.textContent= `Are you sure you want to delete "${eventName}" event?`;
 
         let getDay = getParent.dataset.day;
         let getTime = getParent.parentNode.dataset.time;

@@ -424,7 +424,6 @@ table td .close:hover {
 }
 table td .close:before,
 table td .close:after {
-  position: absolute;
   content: " ";
   height: 15px;
   width: 2px;
