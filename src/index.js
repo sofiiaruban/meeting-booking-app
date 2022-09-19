@@ -85,6 +85,5 @@ function filterMeeting() {
     }
   }
 }
-// to do
-// event-deliting-popup
+
 // * fix redirect box
