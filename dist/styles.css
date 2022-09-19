@@ -408,9 +408,6 @@ table th {
 table td {
   position: relative;
 }
-table td:hover .close {
-  display: block;
-}
 table td .close {
   display: none;
   position: absolute;
@@ -438,6 +435,9 @@ table td .close:after {
 
 .occupied {
   background-color: #ccffcc;
+}
+.occupied:hover .close {
+  display: block;
 }
 .occupied .close:before,
 .occupied .close:after {

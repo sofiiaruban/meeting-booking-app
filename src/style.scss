@@ -62,11 +62,7 @@ table {
   }
   td {
     position: relative;
-    &:hover {
-      .close {
-        display: block;
-      }
-    }
+    
     .close {
       display: none;
       position: absolute;
@@ -97,6 +93,11 @@ table {
 }
 
 .occupied {
+  &:hover {
+    .close {
+      display: block;
+    }
+  }
   .close:before,
   .close:after {
     position: absolute;
