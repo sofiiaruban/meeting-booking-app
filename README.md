@@ -1,4 +1,4 @@
-## <h1> General info </h1>
+<h1> General info </h1>
 
 Simple meeting booking app for a office meeting room
 
