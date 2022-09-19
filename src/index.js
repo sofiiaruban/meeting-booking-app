@@ -85,5 +85,3 @@ function filterMeeting() {
     }
   }
 }
-
-// * fix redirect box
