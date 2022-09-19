@@ -19,12 +19,12 @@ let setData = function (event) {
         JSON.stringify(item.time) == JSON.stringify(newEvent.time)
     )
   ) {
-    showError();
+    showError("Time slot is already booked");
   } else {
     if (newEvent.eventName !== "") {
       events.push(newEvent);
     } else {
-      showError();
+      showError("Events should always have a name");
     }
   }
   localStorage.setItem("events", JSON.stringify(events));
@@ -37,9 +37,11 @@ function redirect() {
 }
 
 let erorrModal = document.querySelector(".error-message-popup");
+let errorModalText = document.querySelector(".error-message-popup p");
 
-function showError() {
+function showError(text) {
   submitBtn.removeEventListener("click", redirect);
+  errorModalText.textContent = `Failed to create an event. ${text}`;
   return (erorrModal.style.display = "flex");
 }
 
