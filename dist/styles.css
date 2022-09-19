@@ -458,9 +458,9 @@ table td .close:after {
   margin: 0 auto;
 }
 .wrapper-create-event .inp-event-name,
-.wrapper-create-event .sel-participant-name,
-.wrapper-create-event .sel-day,
-.wrapper-create-event .sel-time,
+.wrapper-create-event .cell-participant-name,
+.wrapper-create-event .cell-day,
+.wrapper-create-event .cell-time,
 .wrapper-create-event .btns {
   display: flex;
   justify-content: space-between;

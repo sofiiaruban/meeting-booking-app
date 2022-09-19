@@ -118,9 +118,9 @@ table {
     margin: 0 auto;
   }
   .inp-event-name,
-  .sel-participant-name,
-  .sel-day,
-  .sel-time,
+  .cell-participant-name,
+  .cell-day,
+  .cell-time,
   .btns {
     display: flex;
     justify-content: space-between;
