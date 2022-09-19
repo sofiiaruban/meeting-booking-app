@@ -4,6 +4,7 @@ $font-color: #303030;
 $filler-color: #ccffcc;
 $grid-border: 1px solid #c5c5c5;
 $filler-table-head-color: #e5e5e5;
+
 * {
   box-sizing: border-box;
   font-size: calc(15px + (30 - 22) * ((100vw - 320px) / (1200-320)));

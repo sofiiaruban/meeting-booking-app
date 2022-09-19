@@ -1,5 +1,6 @@
 import "./style.scss";
 let submitBtn = document.querySelector(".btn-submit");
+let cancelBtn = document.querySelector(".btn-cancel");
 
 let setData = function (event) {
   let eventName = document.querySelector("#event-name").value;
@@ -29,8 +30,10 @@ let setData = function (event) {
   }
   localStorage.setItem("events", JSON.stringify(events));
 };
+
 submitBtn.addEventListener("click", setData);
 submitBtn.addEventListener("click", redirect);
+cancelBtn.addEventListener("click", redirect);
 
 function redirect() {
   location.replace("index.html");
