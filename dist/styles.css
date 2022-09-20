@@ -411,8 +411,8 @@ table td {
 table td .close {
   display: none;
   position: absolute;
-  right: 6px;
-  top: 0;
+  right: 10px;
+  top: 30%;
   min-width: 1px;
   min-height: 1px;
 }
