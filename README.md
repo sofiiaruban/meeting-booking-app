@@ -1,6 +1,12 @@
 <h1> General info </h1>
 
-Simple meeting booking app for a office meeting room
+Create a simple meeting planning calendar for a meeting room in your office:
+<ul>
+<li>display meetings planned</li>
+<li>filter meetings for a particular team member</li>
+<li>add new meetings</li>
+<li>delete meetings</li>
+</ul>
 
 ## <h1>Technology Stack </h1>
 
