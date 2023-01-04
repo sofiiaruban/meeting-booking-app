@@ -1,6 +1,6 @@
 <h1> General info </h1>
 
-A Simple meeting planning calendar for a meeting room in the office:
+A  meeting planning calendar for a meeting room in the office than can:
 <ul>
 <li>display meetings planned</li>
 <li>filter meetings for a particular team member</li>
